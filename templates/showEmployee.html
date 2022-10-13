@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th{
+            color: goldenrod;
+            background-color: darkblue;
+        }
+        body{
+            background-color:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1> EMPLOYEE DETAILS......</h1>
+    <table border= "5px">
+        <thead>
+            <tr>
+                <th>EMPLOYEE ID</th>
+                <th>EMPLOYEE NAME</th>
+                <th>EMAIL ID</th>
+                <th>PHONE NUMBER</th>
+                <th>DESIGNATION</th>
+                <th>SALARY</th>
+                <th> ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in emps %}
+                <tr>
+                    <td>{{ emp.id}}</td>
+                    <td>{{ emp.emp_name}}</td>
+                    <td>{{ emp.emp_email}}</td>
+                    <td>{{ emp.emp_phone}}</td>
+                    <td>{{ emp.emp_designation}}</td>
+                    <td>{{ emp.emp_salary}}</td>
+                    <td><a href="{% url 'editPage' emp.id  %}">Edit</a><br>
+                    <a href="{% url 'deletePage' emp.id  %}">Delete</a></td>
+                    
+                </tr>
+                
+            {% endfor %}
+        </tbody>
+   </table><br>
+   <a href="{% url 'show_regform' %}">Back</a>
+</center>
+</body>
+</html>

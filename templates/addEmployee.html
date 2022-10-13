@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         h1{
+            color:red
+         }
+         label{
+            
+            width:110px;
+            display:inline-block;
+           
+         }
+         text{
+            width: 300px;;
+         }
+         body{
+            background-image: url('/static/images/crud1.jpg');
+            background-size: cover;
+         }
+         div{
+            background-color: lightblue;
+            justify-content: center;
+            margin: 100px 300px 500px 300px;
+            padding-left: 100px;
+         }
+
+    </style>
+</head>
+<body>
+    
+    <div><br>
+    <h1> EMPLOYEE REGISTRATION</h1>
+    
+    <form method="POST" action="{% url 'add_employeeDetails' %}">
+        {% csrf_token %}
+        <label>NAME</label>
+        <input type="text" name="empname"><br><br>
+        <label>EMAIL</label>
+        <input type="text" name="email_id"><br><br>
+        <label>PHONE NUMBER</label>
+        <input type="text" name="phno"><br><br>
+        <label>DESIGNATION</label>
+        <input type="text" name="desig"><br><br>
+        <label>SALARY</label>
+        <input type="text" name="salary"><br><br>
+        <button type="submit" id="sub">REGISTER</button><br><br>
+
+    </form>
+    </div>
+</body>
+</html>
